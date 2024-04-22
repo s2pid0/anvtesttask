@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+{% if request.user.is_staff %}
+    <p>Hello, admin.</p>
+    <p><a href="/admin"> Show admin panel</a></p>
+{% else %}
+    <p>Hello, ordinary visitor.</p>
+{% endif %}
+
+{% csrf_token %}
+<p><a href="{% url 'customer_profile' pk=id.id %}" method="get">View profile</a></p>
+<p><a href="{% url 'logout' %}" method="get">Logout</a></p>
+{%endblock content%}

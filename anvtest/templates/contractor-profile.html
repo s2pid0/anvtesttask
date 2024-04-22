@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %} I'm contractor{% endblock %}
+{% block content %}
+<div class="card-body">
+    <p><strong>Username:</strong> {{ profile.user }}</p>
+    <p><strong>Contacts:</strong> {{profile.contact}} </p>
+    <p><strong>Experience:</strong> {{profile.exp}} </p>
+</div>
+<div>
+    <p><a href="/update_profile"> Update profile</a></p>
+</div>
+<div>
+    <p><a href="{% url 'customer_profile' pk=profile.id%}"> Switch to my customer profile</a></p>
+</div>
+<div>
+    <p><a href="{% url 'logout' %}" method="get">Logout</a></p>
+</div>
+{% endblock content %}

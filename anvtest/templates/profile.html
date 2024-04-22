@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card-body">
+    <p><strong>Username:</strong> {{ profile.user }}</p>
+    <p><strong>Contacts:</strong> {{profile.contact}} </p>
+
+
+</div>
+<div>
+    <a href="/update_profile"> Update profile</a>
+</div>
+<div>
+    <p><a href="{% url 'contractor_profile' pk=profile.id%}"> Switch to my contractor profile</a></p>
+</div>
+<div>
+    <a href="{% url 'logout' %}" method="get">Logout</a>
+</div>
+{% endblock content %}
